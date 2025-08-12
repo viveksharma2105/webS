@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sujal International School</title>
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    background: #f4f9ff;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 15px;
+    border-bottom: 2px solid #ccc;
+}
+header img {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+}
+header h1 {
+    font-size: 28px;
+    color: #004080;
+    font-family: "Georgia", serif;
+}
+
+nav {
+    background: #004080;
+    padding: 12px 0;
+    text-align: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+.banner {
+    width: 100%;
+    height: 300px;
+}
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    min-height: calc(100vh - 450px);
+    box-sizing: border-box;
+}
+
+.booking {
+    width: 25%;
+    background: white;
+    padding: 15px;
+    border: 1px solid #ccc;
+}
+.booking h3 {
+    margin-top: 0;
+    color: #004080;
+    text-align: center;
+}
+.booking form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.booking input, 
+.booking select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box; 
+}
+.booking input:focus,
+.booking select:focus {
+    border-color: #004080;
+    outline: none;
+}
+.booking input[type="submit"] {
+    background: #004080;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+.booking input[type="submit"]:hover {
+    background: #00264d;
+}
+
+.content {
+    flex-grow: 1;
+    background: white;
+    padding: 15px;
+    border: 1px solid #ccc;
+}
+.content h2 {
+    color: #004080;
+}
+.content img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+footer {
+    background: #004080;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <img src="./image/logo.png" alt="School Logo">
+    <h1>Sujal International School</h1>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Academics</a>
+    <a href="#">About Us</a>
+    <a href="#">Admissions</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="banner">
+    <img src="./image/image.png" alt="Sujal International School">
+</div>
+
+<div class="main">
+    
+    <div class="booking">
+        <h3>Admission Enquiry</h3>
+        <form>
+            <input type="text" placeholder="Parent/Guardian Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Contact Number" required>
+            <select required>
+                <option value="">Select Grade</option>
+                <option>Nursery</option>
+                <option>KG</option>
+                <option>Class 1</option>
+                <option>Class 2</option>
+                <option>Class 3</option>
+                <option>Class 4</option>
+                <option>Class 5</option>
+                <option>Class 6</option>
+                <option>Class 7</option>
+                <option>Class 8</option>
+                <option>Class 9</option>
+                <option>Class 10</option>
+                <option>Class 11</option>
+                <option>Class 12</option>
+            </select>
+            <input type="submit" value="Submit Enquiry">
+        </form>
+    </div>
+
+    <div class="content">
+        <h2>Welcome to Sujal International School</h2>
+        <p>At Sujal International School, we are committed to nurturing young minds with world-class education, modern facilities, and a safe learning environment. Our dedicated teachers inspire students to achieve excellence in academics, sports, and co-curricular activities.</p>
+        <h3>Programs Offered</h3>
+        <p>📘 Primary Education (Nursery to Class 5)</p>
+        <p>📗 Secondary Education (Class 6 to Class 10)</p>
+        <p>📙 Senior Secondary Streams: Science, Commerce & Arts</p>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 Sujal International School | Contact: +91-9876543210 | Follow us on Instagram & Facebook
+</footer>
+
+</body>
+</html>

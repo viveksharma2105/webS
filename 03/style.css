@@ -1,0 +1,95 @@
+/* Theme Colors */
+.text-teal { color: #1ABC9C !important; }
+.bg-teal { background-color: #1ABC9C !important; }
+.btn-teal { background-color: #1ABC9C; color: white; border: none; }
+.btn-teal:hover { background-color: #17a589; color: white; }
+
+/* Logo */
+.logo-text { font-size: 1.8rem; font-weight: 500; }
+.logo-box {
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  padding: 2px 8px;
+  font-size: 1.5rem;
+  margin-right: 3px;
+}
+
+/* Navbar underline effect */
+.navbar-dark .nav-link {
+  color: white;
+  position: relative;
+}
+.navbar-dark .nav-link.active,
+.navbar-dark .nav-link:hover {
+  color: #1ABC9C !important;
+}
+.navbar-dark .nav-link.active::after,
+.navbar-dark .nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #1ABC9C;
+}
+
+/* Carousel captions */
+.carousel-caption {
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+/* "Save Up To 50%" Section */
+.sale-title {
+  color: white;
+}
+.sale-title .percent {
+  color: #1ABC9C;
+  font-weight: bold;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 992px) {
+  .logo-text { font-size: 1.5rem; }
+  .carousel-caption h2 { font-size: 1.8rem; }
+  .carousel-caption p { font-size: 1rem; }
+}
+
+@media (max-width: 768px) {
+  .topbar { font-size: 0.75rem; }
+  .carousel-caption h2 { font-size: 1.5rem; }
+  .carousel-caption p { font-size: 0.9rem; }
+  .carousel-caption { bottom: 40%; }
+}
+
+@media (max-width: 576px) {
+  .topbar .container { flex-direction: column; text-align: center; }
+  .logo-text { font-size: 1.3rem; }
+  .carousel-caption { bottom: 35%; }
+  .carousel-caption h2 { font-size: 1.2rem; }
+  .carousel-caption p { font-size: 0.85rem; }
+}
+/* Sale Heading Style */
+.sale-title {
+  color: #953838;         /* White for main text */
+  font-size: 1.6rem;      /* Adjust as needed */
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.sale-title .percent {
+  color: #1ABC9C;         /* Teal for the percentage */
+  font-weight: bold;
+}
+
+/* Bigger category bar */
+.navbar {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  padding: 0.8rem 1rem;
+}
