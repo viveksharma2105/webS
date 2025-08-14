@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Badges</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 20px;
+    }
+    .badge {
+        background-color: white;
+        width: 320px;
+        border: 2px solid #333;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .badge h2 {
+        text-align: center;
+        color: #444;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    .info-row {
+        display: flex;
+        justify-content: space-between;
+        margin: 8px 0;
+        font-size: 16px;
+    }
+    .label {
+        font-weight: bold;
+        color: #333;
+    }
+    .value {
+        color: #0066cc;
+    }
+</style>
+</head>
+<body>
+
+
+<div class="badge">
+    <h2>Campus ID Badge</h2>
+    <div class="info-row"><span class="label">Name:</span><span class="value" id="studentName"></span></div>
+    <div class="info-row"><span class="label">Seed:</span><span class="value" id="seed"></span></div>
+    <div class="info-row"><span class="label">Department:</span><span class="value" id="department"></span></div>
+    <div class="info-row"><span class="label">Check Code:</span><span class="value" id="checkCode"></span></div>
+</div>
+
+
+<div class="badge">
+    <h2>Protein Oats</h2>
+    <div class="info-row"><span class="label">Servings:</span><span class="value" id="servings"></span></div>
+    <div class="info-row"><span class="label">Per-Serving Calories:</span><span class="value" id="perCal"></span></div>
+    <div class="info-row"><span class="label">Protein %:</span><span class="value" id="proteinPercent"></span></div>
+    <div class="info-row"><span class="label">Carb %:</span><span class="value" id="carbPercent"></span></div>
+    <div class="info-row"><span class="label">Fat %:</span><span class="value" id="fatPercent"></span></div>
+</div>
+
+
+<div class="badge">
+    <h2>Event Ticket</h2>
+    <div class="info-row"><span class="label">Seed:</span><span class="value" id="ticketSeed"></span></div>
+    <div class="info-row"><span class="label">Base Price:</span><span class="value" id="basePrice"></span></div>
+    <div class="info-row"><span class="label">Qty:</span><span class="value" id="quantity"></span></div>
+    <div class="info-row"><span class="label">Discount:</span><span class="value" id="discount"></span></div>
+    <div class="info-row"><span class="label">Total:</span><span class="value" id="total"></span></div>
+</div>
+
+<script>
+    
+    const studentName = "Vivek Sharma";
+    const department = "Computer Science";
+    const seed = "CSE-27";
+
+    const digit1 = Number(seed.charAt(4));
+    const digit2 = Number(seed.charAt(5));
+    const sumDigits = digit1 + digit2;
+    const checkCode = (sumDigits * 7) % 97;
+
+    document.getElementById("studentName").textContent = studentName;
+    document.getElementById("seed").textContent = seed;
+    document.getElementById("department").textContent = department;
+    document.getElementById("checkCode").textContent = checkCode;
+
+    
+    const servings = 3;
+    const caloriesTotal = 522;
+    const protein = 24; 
+    const carbs = 60; 
+    const fat = 18; 
+
+    function perServing(x) {
+        return x / servings;
+    }
+
+    const macroProteinCal = protein * 4;
+    const macroCarbCal = carbs * 4;
+    const macroFatCal = fat * 9;
+    const perServingCalories = perServing(caloriesTotal);
+    const totalMacroCal = macroProteinCal + macroCarbCal + macroFatCal;
+
+    document.getElementById("servings").textContent = servings;
+    document.getElementById("perCal").textContent = perServingCalories.toFixed(0) + " kcal";
+    document.getElementById("proteinPercent").textContent = ((macroProteinCal / totalMacroCal) * 100).toFixed(1) + "%";
+    document.getElementById("carbPercent").textContent = ((macroCarbCal / totalMacroCal) * 100).toFixed(1) + "%";
+    document.getElementById("fatPercent").textContent = ((macroFatCal / totalMacroCal) * 100).toFixed(1) + "%";
+
+    
+    const ticketSeed = "TIX-946";
+    const basePrice = 499;
+    const qty = 3;
+
+    const lastDigit = Number(ticketSeed.charAt(ticketSeed.length - 1));
+    let discountRate;
+
+    if (lastDigit >= 0 && lastDigit <= 3) {
+        discountRate = 0.05;
+    } else if (lastDigit >= 4 && lastDigit <= 6) {
+        discountRate = 0.10;
+    } else {
+        discountRate = 0.15;
+    }
+
+    const totalPrice = (basePrice * qty) * (1 - discountRate);
+
+    document.getElementById("ticketSeed").textContent = ticketSeed;
+    document.getElementById("basePrice").textContent = "₹" + basePrice.toFixed(2);
+    document.getElementById("quantity").textContent = qty;
+    document.getElementById("discount").textContent = (discountRate * 100) + "%";
+    document.getElementById("total").textContent = "₹" + totalPrice.toFixed(2);
+</script>
+
+</body>
+</html>
